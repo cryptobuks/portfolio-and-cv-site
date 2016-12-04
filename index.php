@@ -12,6 +12,11 @@
       $language = "sv";
     };
   };
+
+$pagetitle = "Håkan Arnoldson - Webdeveloper - Portfolio";
+  if ($language = "sv") {
+    $pagetitle = "Håkan Arnoldson - Webbutvecklare - Portfölj";
+  };
 ?>
 <html lang="<?php echo $language; ?>">
 <head>
@@ -23,7 +28,7 @@
   <link rel="alternate" hreflang="en" href="https://arnoldson.online/?l=en" />
   <link rel="alternate" hreflang="sv" href="https://arnoldson.online/?l=sv" />
 
-  <title><?php echo $language; ?></title>
+  <title><?php echo $pagetitle ?></title>
 
   <link rel="stylesheet" href="css/main.min.css" />
 
