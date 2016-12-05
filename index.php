@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+  date_default_timezone_set('Europe/Stockholm');
   //Defaults to english but tries to catch Swedish prefered browsers
   $language = "en";
   if (!isset($_GET["l"])) {
@@ -14,8 +15,10 @@
   };
 
 $pagetitle = "Håkan Arnoldson - Webdeveloper - Portfolio";
-  if ($language = "sv") {
+$pagedescription = "Professional portfolio site for front-end aspiring front-end developer Håkan Arnoldson. Showcases projects and work.";
+  if ($language == "sv") {
     $pagetitle = "Håkan Arnoldson - Webbutvecklare - Portfölj";
+    $pagedescription = "Potföljsida med projekt och arbeten från aspirereande front-end utvecklare Håkan Arnoldson.";
   };
 ?>
 <html lang="<?php echo $language; ?>">
@@ -28,13 +31,18 @@ $pagetitle = "Håkan Arnoldson - Webdeveloper - Portfolio";
   <link rel="alternate" hreflang="en" href="https://arnoldson.online/?l=en" />
   <link rel="alternate" hreflang="sv" href="https://arnoldson.online/?l=sv" />
 
-  <title><?php echo $pagetitle ?></title>
+  <title><?php echo $pagetitle; ?></title>
+  <meta name="description" content="<?php echo $pagedescription; ?>">
 
   <link rel="stylesheet" href="css/main.min.css" />
 
 </head>
 <body>
+  <script src="dependencies/jquery-3.1.1/js/jquery-3.1.1.js"></script>
   <script src="js/main.js"></script>
-  <?php include 'includes/' . $language . '.html'; ?>
+  <script src="js/contact.js"></script>
+  <?php include 'includes/' . $language . '/main.html'; ?>
+  <?php include 'includes/' . $language . '/contact-form.php'; ?>
+  <?php include 'includes/' . $language . '/footer.html'; ?>
 </body>
 </html>
