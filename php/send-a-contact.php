@@ -1,5 +1,4 @@
 <?php
-  date_default_timezone_set('Europe/Stockholm');
 
   include 'spamcheckDBvariable.php';
   /*this file is not included and should contain the following
@@ -51,7 +50,7 @@
 
     $sql = "SELECT ip FROM TheSenders;";
     $result = $conn->query($sql);
-    $iphits = 0;
+    $iphits = 0; ///do different just check if any matches returned select by ip
     if ($result->num_rows > 0) {
       while($row = $result->fetch_assoc()) {
         if ($row["ip"] == $userip) {

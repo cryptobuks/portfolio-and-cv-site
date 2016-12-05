@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <?php
-  date_default_timezone_set('Europe/Stockholm');
   //Defaults to english but tries to catch Swedish prefered browsers
   $language = "en";
   if (!isset($_GET["l"])) {
@@ -34,6 +33,7 @@ $pagedescription = "Professional portfolio site for front-end aspiring front-end
   <title><?php echo $pagetitle; ?></title>
   <meta name="description" content="<?php echo $pagedescription; ?>">
 
+  <link rel="stylesheet" href="dependencies/normalize-5.0.0/normalize.min.css" />
   <link rel="stylesheet" href="css/main.min.css" />
 
 </head>
