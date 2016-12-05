@@ -8,7 +8,11 @@
   $password = "password";
   $dbname = "myDB";
   */
-
+  if (isset($_POST['language'])) {
+    $lang = $_POST['language'];
+  } else {
+    $lang = "en";
+  };
   $userip = $_SERVER['REMOTE_ADDR'];
   $timestamp = date('Y-m-d G:i:s');
 
@@ -48,22 +52,19 @@
     $conn->query($sql);
 
 
-    $sql = "SELECT ip FROM TheSenders;";
+    $sql = "SELECT id FROM TheSenders WHERE ip = '$userip';";
     $result = $conn->query($sql);
-    $iphits = 0; ///do different just check if any matches returned select by ip
-    if ($result->num_rows > 0) {
-      while($row = $result->fetch_assoc()) {
-        if ($row["ip"] == $userip) {
-          $iphits++;
-        };
-      };
-    };
-    $conn->close();
-    if ($iphits > 20) {
+    if ($result->num_rows > 25) {
       http_response_code(403);
-      echo "To many requests from this IP. Temporarily blocked!";
+      if ($lang == "sv") {
+        echo "För många förfrågrningar från detta IP. Tillfälligt blockerad!";
+      } else {
+        echo "To many requests from this IP. Temporarily blocked!";
+      };
+      $conn->close();
       exit;
     };
+    $conn->close();
   };
 
   session_start();
@@ -81,20 +82,33 @@
   if (!strpos($referer, $mydomain) AND !strpos($origin, $mydomain)) {
     //If neither origin or referer. Very simply abuse check and dont want to rely on origin yet (not implimented).
     http_response_code(403);
-    echo "403 - External request refused.";
+    if ($lang == "sv") {
+      echo "403 - Extern förfrågan blockerad.";
+    } else {
+      echo "403 - External request refused.";
+    };
     exit;
     }
 
   if ($_SESSION['formsenttime'] > (time() - 30)) {
     //no more then every 30 sec
     http_response_code(400);
-    echo "Please wait a little bit longer before using the form again.";
+    if ($lang == "sv") {
+      echo "Vänligen vänta lite längre innan ni skickar forumläret igen.";
+    } else {
+      echo "Please wait a little bit longer before using the form again.";
+    };
     exit;
   }
 
   if ($_SESSION['from'] !== "arnoldson.online") {
     http_response_code(403);
-    echo "403 - Unauthorized request.";
+    if ($lang == "sv") {
+      echo "403 - Otillåten begäran.";
+    } else {
+      echo "403 - Unauthorized request.";
+    };
+
     exit;
     }
 
@@ -107,13 +121,21 @@
     if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
       // Set a 400 (bad request) response code and exit.
       http_response_code(400);
-      echo "Make sure you filled all fields and used a valid e-mail. Try again.";
+      if ($lang == "sv") {
+        echo "Kontrolla att alla fälten är ordentligt ifyllda. Försök igen.";
+      } else {
+        echo "Make sure you filled all fields and used a valid e-mail. Try again.";
+      };
       exit;
     }
 
     if ($_POST['url'] != "") {
       http_response_code(403);
-      echo "Refused by spamfilter. Try another method of contact.";
+      if ($lang == "sv") {
+        echo "Blockerad av spamfilter. Försök med en annan kontaktmetod.";
+      } else {
+        echo "Refused by spamfilter. Try another method of contact.";
+      };
       exit;
     };
 
@@ -128,14 +150,22 @@
     if ($_SESSION['lastcontent'] == $email_content) {
       //sent same content twice
       http_response_code(400);
-      echo "It appears you already sent this data. Try again.";
+      if ($lang == "sv") {
+        echo "Du verkar redan ha skickat det här meddelandet. Försök igen.";
+      } else {
+        echo "It appears you already sent this data. Try again.";
+      };
       exit;
     }
 
 
     if ($_SESSION['token'] != $_POST['token']) {
       http_response_code(400);
-      echo "Maximum submissions passed. Please try again in a few hours or use a different contact method.";
+      if ($lang == "sv") {
+        echo "Du har skickat formuläret för många gånger. Prova igen om ett par timmar eller välj annan kontaktmetod";
+      } else {
+        echo "Maximum submissions passed. Please try again in a few hours or use a different contact method.";
+      };
       exit;
     };
 
@@ -155,17 +185,29 @@
       };
 
       http_response_code(200);
-      echo "Thank You! I will get back to you shortly.";
+      if ($lang == "sv") {
+        echo "Tack så mycket! Jag svarar snart.";
+      } else {
+        echo "Thank you! I will answer shortly.";
+      };
       exit;
     } else {
       http_response_code(500);
-      echo "Server failed to send the mail! Try again or another means of contact.";
+      if ($lang == "sv") {
+        echo "Servern är död. Prova kontakta mig på ett annat sätt.";
+      } else {
+        echo "The server has died. Try contacting me some other way.";
+      };
     }
 
   } else {
     //not POST
     http_response_code(403);
-    echo "403 - Forbidden request.";
+    if ($lang == "sv") {
+      echo "403 - Förbjuden förfrågan.";
+    } else {
+      echo "403 - Forbidden request.";
+    };
     exit;
   }
 

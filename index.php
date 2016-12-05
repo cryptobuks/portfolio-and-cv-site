@@ -41,8 +41,18 @@ $pagedescription = "Professional portfolio site for front-end aspiring front-end
   <script src="dependencies/jquery-3.1.1/js/jquery-3.1.1.js"></script>
   <script src="js/main.js"></script>
   <script src="js/contact.js"></script>
-  <?php include 'includes/' . $language . '/main.html'; ?>
-  <?php include 'includes/' . $language . '/contact-form.php'; ?>
-  <?php include 'includes/' . $language . '/footer.html'; ?>
+  <?php
+    /* STATIC START TEXT VARIABLES FROM LANGUAGE FILES */
+    include 'includes/' . $language . '/text.php';
+  ?>
+  <!-- BEGIN PAGE HTML -->
+
+
+  <!-- CONTACT FORM START -->
+    <?php include 'includes/contact-form.php'; ?>
+  <!-- CONTACT FORM END -->
+
+
+  <!-- END PAGE HTML -->
 </body>
 </html>
