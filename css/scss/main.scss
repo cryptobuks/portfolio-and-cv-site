@@ -1,3 +1,82 @@
+/* VARIABLES */
+$font-stack: sans-serif;
+$content-max-width: 800px;
+$background-colour-bars: lightgrey;
+
+
+/* MIXINS */
+  @mixin transform($value) {
+  transform: $value;
+  -webkit-transform: $value;
+  }
+
+/* SCSS EXTEND CLASSES */
+
+.fill {
+  width: 100%;
+  height: 100%;
+}
+
+.no-space {
+  padding:0;
+  margin:0;
+}
+
+/* TAG SELECTORS */
+
+html {
+  @extend .fill;
+}
+
 body {
-  font-size: 1rem; //temp to avoid errors on empty file while doing backend
+  @extend .fill;
+  font-family: $font-stack;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+fieldset {
+  @extend .no-space, .fill;
+}
+
+/* CLASS SELECTORS */
+
+.content {
+  max-width: $content-max-width;
+}
+
+
+
+/************************
+UNIQUE ELEMENTS
+*************************/
+
+/* LANGAGE FLAG FOLLOW */
+#lanugage-flag {
+  @extend .no-space;
+  width: (85px / 3);
+  height: (85px / 4);
+  position: fixed;
+  bottom: 13px;
+  left: 13px;
+  img {
+    border-radius: 5px;
+  }
+  img:hover {
+    transform: scale(1.4);
+    transition: all .4s ease-in-out;
+  }
+}
+
+#cover-wrapper {
+  background-color: rgb(193,193,193);
+}
+
+#footer-wrapper {
+  background-color: $background-colour-bars;
 }

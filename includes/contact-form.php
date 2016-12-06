@@ -37,16 +37,16 @@ function generateRandomString($length = 10) {
     <input id="form-url" name="url" type="url" value="">
     <input id="form-lang" name="language" type="hidden" value="<?php echo $language; ?>">
     <fieldset>
-      <input id="form-name" name="name" placeholder="<?php echo $nameplaceholder; ?>" type="text" tabindex="1" required>
+      <input id="form-name" name="name" placeholder="<?php echo $contactformtext["name"]; ?>" type="text" tabindex="1" required>
     </fieldset>
     <fieldset>
-      <input id="form-email" name="email" placeholder="<?php echo $emailplaceholder; ?>" type="email" tabindex="2" required>
+      <input id="form-email" name="email" placeholder="<?php echo $contactformtext["email"]; ?>" type="email" tabindex="2" required>
     </fieldset>
     <fieldset>
-      <textarea id="form-message" name="message" placeholder="<?php echo $messageplacholder; ?>" tabindex="3" required></textarea>
+      <textarea id="form-message" name="message" placeholder="<?php echo $contactformtext["message"]; ?>" tabindex="3" required></textarea>
     </fieldset>
     <fieldset>
-      <button name="submit" type="submit" id="contact-submit" data-submit="<?php echo $submitsending; ?>" tabindex="4"><?php echo $submittext; ?></button>
+      <button name="submit" type="submit" id="contact-submit" data-submit="<?php echo $contactformtext["sending"]; ?>" tabindex="4"><?php echo $contactformtext["send"]; ?></button>
       <div id="form-messages"></div>
     </fieldset>
   </form>

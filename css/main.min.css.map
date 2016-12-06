@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "main.min.css",
+	"sources": [
+		"scss/main.scss"
+	],
+	"sourcesContent": [
+		"/* VARIABLES */\r\n$font-stack: sans-serif;\r\n$content-max-width: 800px;\r\n$background-colour-bars: lightgrey;\r\n\r\n\r\n/* MIXINS */\r\n  @mixin transform($value) {\r\n  transform: $value;\r\n  -webkit-transform: $value;\r\n  }\r\n\r\n/* SCSS EXTEND CLASSES */\r\n\r\n.fill {\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n\r\n.no-space {\r\n  padding:0;\r\n  margin:0;\r\n}\r\n\r\n/* TAG SELECTORS */\r\n\r\nhtml {\r\n  @extend .fill;\r\n}\r\n\r\nbody {\r\n  @extend .fill;\r\n  font-family: $font-stack;\r\n}\r\n\r\nimg {\r\n  max-width: 100%;\r\n  max-height: 100%;\r\n  width: auto;\r\n  height: auto;\r\n}\r\n\r\nfieldset {\r\n  @extend .no-space, .fill;\r\n}\r\n\r\n/* CLASS SELECTORS */\r\n\r\n.content {\r\n  max-width: $content-max-width;\r\n}\r\n\r\n\r\n\r\n/************************\r\nUNIQUE ELEMENTS\r\n*************************/\r\n\r\n/* LANGAGE FLAG FOLLOW */\r\n#lanugage-flag {\r\n  @extend .no-space;\r\n  width: (85px / 3);\r\n  height: (85px / 4);\r\n  position: fixed;\r\n  bottom: 13px;\r\n  left: 13px;\r\n  img {\r\n    border-radius: 5px;\r\n  }\r\n  img:hover {\r\n    transform: scale(1.4);\r\n    transition: all .4s ease-in-out;\r\n  }\r\n}\r\n\r\n#cover-wrapper {\r\n  background-color: rgb(193,193,193);\r\n}\r\n\r\n#footer-wrapper {\r\n  background-color: $background-colour-bars;\r\n}\r\n"
+	],
+	"mappings": "AAcA,AAAA,KAAK,CAYL,AAZA,IAYI,CAIJ,AAhBA,IAgBI,CAYJ,AA5BA,QA4BQ,AA5BF,CACJ,KAAK,CAAE,IAAK,CACZ,MAAM,CAAE,IAAK,CACd,AAED,AAAA,SAAS,CAuBT,AAvBA,QAuBQ,CAiBR,AAxCA,cAwCc,AAxCJ,CACR,OAAO,CAAC,CAAE,CACV,MAAM,CAAC,CAAE,CACV,AAQD,AAAA,IAAI,AAAC,CAEH,WAAW,CA/BA,UAAU,CAgCtB,AAED,AAAA,GAAG,AAAC,CACF,SAAS,CAAE,IAAK,CAChB,UAAU,CAAE,IAAK,CACjB,KAAK,CAAE,IAAK,CACZ,MAAM,CAAE,IAAK,CACd,AAQD,AAAA,QAAQ,AAAC,CACP,SAAS,CA/CS,KAAK,CAgDxB,AASD,AAAA,cAAc,AAAC,CAEb,KAAK,CAAG,UAAI,CACZ,MAAM,CAAG,OAAI,CACb,QAAQ,CAAE,KAAM,CAChB,MAAM,CAAE,IAAK,CACb,IAAI,CAAE,IAAK,CAQZ,AAdD,AAOE,cAPY,CAOZ,GAAG,AAAC,CACF,aAAa,CAAE,GAAI,CACpB,AATH,AAUK,cAVS,CAUZ,GAAG,AAAA,MAAM,AAAC,CACR,SAAS,CAAE,UAAK,CAChB,UAAU,CAAE,mBAAoB,CACjC,AAGH,AAAA,cAAc,AAAC,CACb,gBAAgB,CAAE,OAAG,CACtB,AAED,AAAA,eAAe,AAAC,CACd,gBAAgB,CA7EO,OAAS,CA8EjC",
+	"names": []
+}

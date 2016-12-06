@@ -1,10 +1,26 @@
 <?php
 
 /* CONTACT FORM */
-$nameplaceholder = "Ditt namn";
-$emailplaceholder = "Din e-mail";
-$messageplacholder = "Ditt meddelande....";
-$submitsending = "...Sänder";
-$submittext = "Skicka";
+$contactformtext = [
+  "name" => "Ditt namn",
+  "email" => "Din e-mail",
+  "message" => "Ditt meddelande....",
+  "sending" => "...Sänder",
+  "send" => "Skicka",
+];
+
+/* MAIN MENU ITEMS */
+$mainmenutext = [
+  "projects" => "Projekt",
+  "about" => "Om Håkan",
+  "contact" => "Kontakt",
+  "cv" => "CV",
+  "socialcv" => "Socialt CV",
+];
+
+/* HEADER */
+$headertext = [
+  "title" => "Aspirerande Front-end Javascript utvecklare",
+];
 
 ?>
