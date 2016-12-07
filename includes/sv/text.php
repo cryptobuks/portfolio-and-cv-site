@@ -15,7 +15,7 @@ $mainmenutext = [
   "about" => "Om Håkan",
   "contact" => "Kontakt",
   "cv" => "CV",
-  "socialcv" => "Socialt CV",
+  "socialcv" => "Socialt",
 ];
 
 /* HEADER */

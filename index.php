@@ -53,45 +53,48 @@ $pagedescription = "Professional portfolio site for front-end aspiring front-end
   ?>
   <figure id="lanugage-flag">
     <a href="https://arnoldson.online/?l=<?php if ($language == "sv") {echo "en";} else {echo "sv";};?>">
-      <img src="dependencies/partial/flag-icon-css-master/flags/4x3/<?php echo $shownflag; ?>.svg">
+      <img src="dependencies/flag-icon-css-master/flags/4x3/<?php echo $shownflag; ?>.svg">
     </a>
   </figure>
   <!-- BEGIN PAGE HTML -->
   <section id="cover-wrapper">
     <nav class="main-navigation">
-      <ul>
+      <ul class="nav-main-list">
         <li class="main-nav-item">
           <a href="#"><?php echo $mainmenutext["projects"]; ?></a>
         </li>
         <li class="main-nav-item">
-          <a href="#"><?php echo $mainmenutext["about"]; ?></a>
+          <a href="#about-wrapper"><?php echo $mainmenutext["about"]; ?></a>
         </li>
         <li class="main-nav-item">
-          <a href="#"><?php echo $mainmenutext["contact"]; ?></a>
+          <a href="#cv-wrapper"><?php echo $mainmenutext["cv"]; ?></a>
         </li>
         <li class="main-nav-item">
-          <a href="#"><?php echo $mainmenutext["cv"]; ?></a>
+          <a href="#contact-wrapper"><?php echo $mainmenutext["contact"]; ?></a>
         </li>
-        <li class="main-nav-item">
-          <a href="#"><?php echo $mainmenutext["socialcv"]; ?></a>
-          <ul>
-            <li class="main-nav-sub-item">
-              <a href="#">GitHub</a>
-            </li>
-            <li class="main-nav-sub-item">
-              <a href="#">LinkedIn</a>
-            </li>
-            <li class="main-nav-sub-item">
-              <a href="#">Stack Overflow</a>
-            </li>
-            <li class="main-nav-sub-item">
-              <a href="#">Team Treehouse</a>
-            </li><li class="main-nav-sub-item">
-              <a href="#">Codecademy</a>
-            </li>
-          </ul>
+        <li class="main-nav-item dropdown">
+          <a href="#" class="dropbtn"><?php echo $mainmenutext["socialcv"]; ?></a>
+          <div class="dropdown-collapser">
+            <ul class="dropdown-content">
+              <li class="main-nav-sub-item">
+                <a href="#">GitHub</a>
+              </li>
+              <li class="main-nav-sub-item">
+                <a href="#">LinkedIn</a>
+              </li>
+              <li class="main-nav-sub-item">
+                <a href="#">Stack Overflow</a>
+              </li>
+              <li class="main-nav-sub-item">
+                <a href="#">Team Treehouse</a>
+              </li><li class="main-nav-sub-item">
+                <a href="#">Codecademy</a>
+              </li>
+            </ul>
+          </div>
         </li>
       </ul>
+      <button class="navbar-toggler"></button>
     </nav>
 
     <header>
@@ -112,7 +115,19 @@ Nullam suscipit nunc sapien, eget pharetra enim rhoncus vitae. Aenean vitae cond
 
     </p>
   </section>
+  <section id="cv-wrapper" class="content">
+    <h2>CV</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla cursus metus non placerat. Nullam ac tempus lacus, eget bibendum ligula. Donec hendrerit orci justo, in scelerisque sapien molestie a. Praesent eget vehicula neque. Vestibulum posuere molestie purus, quis pretium nibh gravida eget. Phasellus in enim sit amet ligula varius feugiat vel at libero. Suspendisse at mi volutpat, venenatis massa a, aliquam lacus. Donec sit amet malesuada ipsum.
 
+Nullam suscipit nunc sapien, eget pharetra enim rhoncus vitae. Aenean vitae condimentum magna. Vestibulum eu fermentum nisi. Nam vitae vestibulum quam. Proin at leo ac odio varius consectetur non a leo. Nullam auctor mi eget arcu pharetra pulvinar. In hac habitasse platea dictumst. Quisque commodo accumsan justo et dictum. Nullam volutpat lorem ut tortor bibendum condimentum. Nulla non tortor lobortis, ullamcorper nisl ac, tempor ligula. Maecenas ut facilisis arcu. Nullam vehicula lorem vel commodo vulputate.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla cursus metus non placerat. Nullam ac tempus lacus, eget bibendum ligula. Donec hendrerit orci justo, in scelerisque sapien molestie a. Praesent eget vehicula neque. Vestibulum posuere molestie purus, quis pretium nibh gravida eget. Phasellus in enim sit amet ligula varius feugiat vel at libero. Suspendisse at mi volutpat, venenatis massa a, aliquam lacus. Donec sit amet malesuada ipsum.
+
+Nullam suscipit nunc sapien, eget pharetra enim rhoncus vitae. Aenean vitae condimentum magna. Vestibulum eu fermentum nisi. Nam vitae vestibulum quam. Proin at leo ac odio varius consectetur non a leo. Nullam auctor mi eget arcu pharetra pulvinar. In hac habitasse platea dictumst. Quisque commodo accumsan justo et dictum. Nullam volutpat lorem ut tortor bibendum condimentum. Nulla non tortor lobortis, ullamcorper nisl ac, tempor ligula. Maecenas ut facilisis arcu. Nullam vehicula lorem vel commodo vulputate.
+
+
+    </p>
+  </section>
   <section id="contact-wrapper" class="content">
     <h2>Contact form</h2>
   <!-- CONTACT FORM START -->
