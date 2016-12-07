@@ -2,25 +2,22 @@
 <?php
   //Defaults to english but tries to catch Swedish prefered browsers
   $language = "en";
-  $shownflag = "se";
   if (!isset($_GET["l"])) {
     $userslang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
     if ($userslang == "sv") {
       $language = "sv";
-      $shownflag = "gb";
     };
   } else {
     if ($_GET["l"] == "sv") {
       $language = "sv";
-      $shownflag = "gb";
     };
   };
 
-$pagetitle = "Håkan Arnoldson - Webdeveloper - Portfolio";
+$pagetitle = "Håkan Arnoldson - A Webdeveloper's Portfolio";
 $pagedescription = "Professional portfolio site for front-end aspiring front-end developer Håkan Arnoldson. Showcases projects and work.";
   if ($language == "sv") {
-    $pagetitle = "Håkan Arnoldson - Webbutvecklare - Portfölj";
-    $pagedescription = "Potföljsida med projekt och arbeten från aspirereande front-end utvecklare Håkan Arnoldson.";
+    $pagetitle = "Håkan Arnoldson - En webbutvecklares protfölj";
+    $pagedescription = "Portföljsida med projekt och arbeten från aspirereande front-end utvecklare Håkan Arnoldson.";
   };
 ?>
 <html lang="<?php echo $language; ?>">
@@ -37,8 +34,6 @@ $pagedescription = "Professional portfolio site for front-end aspiring front-end
   <meta name="description" content="<?php echo $pagedescription; ?>">
 
   <link rel="stylesheet" href="dependencies/normalize-5.0.0/normalize.min.css" />
-  <link rel="stylesheet" href="dependencies/font-awesome-4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="dependencies/foundation-icons/foundation-icons.css" />
   <link rel="stylesheet" href="css/main.min.css" />
 
 </head>
@@ -51,59 +46,64 @@ $pagedescription = "Professional portfolio site for front-end aspiring front-end
     /* STATIC START TEXT VARIABLES FROM LANGUAGE FILES */
     include 'includes/' . $language . '/text.php';
   ?>
+  <!-- BEGIN PAGE HTML -->
+  <!-- BEGIN LANGUAGE SELECTOR -->
   <figure id="lanugage-flag">
     <a href="https://arnoldson.online/?l=<?php if ($language == "sv") {echo "en";} else {echo "sv";};?>">
-      <img src="dependencies/flag-icon-css-master/flags/4x3/<?php echo $shownflag; ?>.svg">
+      <span class="language-<?php echo $language?>"></span>
     </a>
   </figure>
-  <!-- BEGIN PAGE HTML -->
-  <section id="cover-wrapper">
-    <nav class="main-navigation">
-      <ul class="nav-main-list">
-        <li class="main-nav-item">
-          <a href="#"><?php echo $mainmenutext["projects"]; ?></a>
-        </li>
-        <li class="main-nav-item">
-          <a href="#about-wrapper"><?php echo $mainmenutext["about"]; ?></a>
-        </li>
-        <li class="main-nav-item">
-          <a href="#cv-wrapper"><?php echo $mainmenutext["cv"]; ?></a>
-        </li>
-        <li class="main-nav-item">
-          <a href="#contact-wrapper"><?php echo $mainmenutext["contact"]; ?></a>
-        </li>
-        <li class="main-nav-item dropdown">
-          <a href="#" class="dropbtn"><?php echo $mainmenutext["socialcv"]; ?></a>
-          <div class="dropdown-collapser">
-            <ul class="dropdown-content">
-              <li class="main-nav-sub-item">
-                <a href="#">GitHub</a>
-              </li>
-              <li class="main-nav-sub-item">
-                <a href="#">LinkedIn</a>
-              </li>
-              <li class="main-nav-sub-item">
-                <a href="#">Stack Overflow</a>
-              </li>
-              <li class="main-nav-sub-item">
-                <a href="#">Team Treehouse</a>
-              </li><li class="main-nav-sub-item">
-                <a href="#">Codecademy</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-      <button class="navbar-toggler"></button>
-    </nav>
-
-    <header>
-      <span>Håkan Arnoldson</span>
-      <span><?php echo $headertext["title"];?></span>
-    </header>
-  </section>
+  <!-- END LANGUAGE SELECTOR -->
+  <!-- BEGIN MAIN NAV -->
+  <nav class="main-navigation">
+    <ul class="nav-main-list">
+      <li class="main-nav-item">
+        <a href="#"><?php echo $mainmenutext["projects"]; ?></a>
+      </li>
+      <li class="main-nav-item">
+        <a href="#about-wrapper"><?php echo $mainmenutext["about"]; ?></a>
+      </li>
+      <li class="main-nav-item">
+        <a href="#cv-wrapper"><?php echo $mainmenutext["cv"]; ?></a>
+      </li>
+      <li class="main-nav-item">
+        <a href="#contact-wrapper"><?php echo $mainmenutext["contact"]; ?></a>
+      </li>
+      <li class="main-nav-item dropdown">
+        <a href="#" class="dropbtn"><?php echo $mainmenutext["socialcv"]; ?></a>
+        <div class="dropdown-collapser">
+          <ul class="dropdown-content">
+            <li class="main-nav-sub-item">
+              <a href="#">GitHub</a>
+            </li>
+            <li class="main-nav-sub-item">
+              <a href="#">LinkedIn</a>
+            </li>
+            <li class="main-nav-sub-item">
+              <a href="#">Stack Overflow</a>
+            </li>
+            <li class="main-nav-sub-item">
+              <a href="#">Team Treehouse</a>
+            </li><li class="main-nav-sub-item">
+              <a href="#">Codecademy</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <!-- END MAIN NAV -->
+  <!-- BEGIN HEADER -->
+  <header class="main-header">
+        <h3 class="hello"><?php echo $headertext["h3"];?></h3>
+        <h2><?php echo $headertext["h2"];?></h2>
+        <h1><?php echo $headertext["h1"];?></h1>
+        <h4><?php echo $headertext["h4"];?></h4>
+  </header>
+  <!-- END HEADER -->
+  <!-- BEGIN CONTENT -->
   <section id="about-wrapper" class="content">
-    <h2>ABOUT</h2>
+    <h2>About</h2>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla cursus metus non placerat. Nullam ac tempus lacus, eget bibendum ligula. Donec hendrerit orci justo, in scelerisque sapien molestie a. Praesent eget vehicula neque. Vestibulum posuere molestie purus, quis pretium nibh gravida eget. Phasellus in enim sit amet ligula varius feugiat vel at libero. Suspendisse at mi volutpat, venenatis massa a, aliquam lacus. Donec sit amet malesuada ipsum.
 
@@ -134,15 +134,15 @@ Nullam suscipit nunc sapien, eget pharetra enim rhoncus vitae. Aenean vitae cond
     <?php include 'includes/contact-form.php'; ?>
   <!-- CONTACT FORM END -->
   </section>
-
+  <!-- END CONTENT -->
+  <!-- BEGIN FOOTER -->
   <footer id="footer-wrapper">
     <p>
-      FOOTER
+      Footer
     </p>
 
   </footer>
-
-
+  <!-- END FOOTER -->
   <!-- END PAGE HTML -->
 </body>
 </html>

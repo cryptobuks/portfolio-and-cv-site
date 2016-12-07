@@ -21,7 +21,10 @@ $mainmenutext = [
 
 /* HEADER */
 $headertext = [
-  "title" => "Aspiring Front-end JavaScript Developer",
+  "h1" => "Front-end/Javascript student",
+  "h2" => "I am Håkan Arnoldson",
+  "h3" => "Hello!",
+  "h4" => "I am currently looking for a trainee position for my studies at Lernia YH in Javascript development."
 ];
 
 ?>

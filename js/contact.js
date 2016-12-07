@@ -9,13 +9,11 @@ window.addEventListener('load', function() {
 });
 
 function sendContactForm(event) {
-  console.log(event);
   event.preventDefault();
   document.getElementById("contact-submit").disabled = true;
 
 
   var formData = $("#contact-form").serialize();
-  console.log(formData);
   var formMessages = $("#form-messages");
 
   $.ajax({
