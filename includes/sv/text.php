@@ -22,7 +22,7 @@ $mainmenutext = [
 $headertext = [
   "h1" => "Front-end/Javascript student",
   "h2" => "Jag är Håkan Arnoldson",
-  "h3" => "Hej!",
+  "h3" => "Hej",
   "h4" => "Jag letar just nu praktikplats för min YH utbildning hos Lernia till Javascript utvecklare."
 ];
 

@@ -55,7 +55,10 @@ $pagedescription = "Professional portfolio site for front-end aspiring front-end
   </figure>
   <!-- END LANGUAGE SELECTOR -->
   <!-- BEGIN MAIN NAV -->
-  <nav class="main-navigation">
+  <nav class="main-navigation" style="position:fixed; top:0;z-index:2;">
+    <nav id="main-fake-nav" style="background-color:green; width: 100px; height: 5px; float:left;">
+
+    </nav>
     <ul class="nav-main-list">
       <li class="main-nav-item">
         <a href="#"><?php echo $mainmenutext["projects"]; ?></a>
@@ -94,14 +97,41 @@ $pagedescription = "Professional portfolio site for front-end aspiring front-end
   </nav>
   <!-- END MAIN NAV -->
   <!-- BEGIN HEADER -->
-  <header class="main-header">
-        <h3 class="hello"><?php echo $headertext["h3"];?></h3>
-        <h2><?php echo $headertext["h2"];?></h2>
-        <h1><?php echo $headertext["h1"];?></h1>
-        <h4><?php echo $headertext["h4"];?></h4>
-  </header>
+  <div class="header-wrapper">
+    <header class="main-header">
+          <h3 class="hello"><?php echo $headertext["h3"];?></h3>
+          <h2><?php echo $headertext["h2"];?></h2>
+          <h1><?php echo $headertext["h1"];?></h1>
+          <h4><?php echo $headertext["h4"];?></h4>
+    </header>
+  </div>
   <!-- END HEADER -->
   <!-- BEGIN CONTENT -->
+  <section id="projects-wrapper">
+    <ul class="grid cf">
+      <li class="col">
+        1
+      </li>
+      <li class="col">
+        2
+      </li>
+      <li class="col">
+        3
+      </li>
+      <li class="col">
+        4
+      </li>
+      <li class="col">
+        5
+      </li>
+      <li class="col">
+        6
+      </li>
+      <li class="col">
+        7
+      </li>
+    </ul>
+  </section>
   <section id="about-wrapper" class="content">
     <h2>About</h2>
     <p>
