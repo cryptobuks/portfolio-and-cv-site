@@ -56,12 +56,12 @@ $pagedescription = "Professional portfolio site for front-end aspiring front-end
   <!-- END LANGUAGE SELECTOR -->
   <!-- BEGIN MAIN NAV -->
   <nav class="main-navigation" style="position:fixed; top:0;z-index:2;">
-    <nav id="main-fake-nav" style="background-color:green; width: 100px; height: 5px; float:left;">
+    <!--<nav id="main-fake-nav" style="background-color:green; width: 100px; height: 5px; float:left;">
 
-    </nav>
+    </nav>-->
     <ul class="nav-main-list">
       <li class="main-nav-item">
-        <a href="#"><?php echo $mainmenutext["projects"]; ?></a>
+        <a href="#projects-wrapper"><?php echo $mainmenutext["projects"]; ?></a>
       </li>
       <li class="main-nav-item">
         <a href="#about-wrapper"><?php echo $mainmenutext["about"]; ?></a>
@@ -77,19 +77,13 @@ $pagedescription = "Professional portfolio site for front-end aspiring front-end
         <div class="dropdown-collapser">
           <ul class="dropdown-content">
             <li class="main-nav-sub-item">
-              <a href="#">GitHub</a>
+              <a href="https://github.com/hkarn/" target="_blank">GitHub</a>
             </li>
             <li class="main-nav-sub-item">
               <a href="#">LinkedIn</a>
             </li>
             <li class="main-nav-sub-item">
-              <a href="#">Stack Overflow</a>
-            </li>
-            <li class="main-nav-sub-item">
-              <a href="#">Team Treehouse</a>
-            </li><li class="main-nav-sub-item">
-              <a href="#">Codecademy</a>
-            </li>
+              <a href="https://teamtreehouse.com/hkanarnoldson" target="_blank">Team Treehouse</a>
           </ul>
         </div>
       </li>
@@ -109,54 +103,56 @@ $pagedescription = "Professional portfolio site for front-end aspiring front-end
   <!-- BEGIN CONTENT -->
   <section id="projects-wrapper">
     <ul class="grid cf">
+      <li class="col" style="background-image: url('img/project-currency.png');">
+        <a href="projects/currency/"><img src="img/project-currency.png"></a>
+      </li>
+      <li class="col" style="background-image: url('img/project-vocabulary.png');">
+        <a href="projects/vocabulary/"><img src="img/project-currency.png"></a>
+      </li>
+      <li class="col" style="background-image: url('img/project-guess.png');">
+        <a href="projects/guess/"><img src="img/project-currency.png"></a>
+      </li><!--
       <li class="col">
-        1
+        layout test
       </li>
       <li class="col">
-        2
+        layout test
       </li>
       <li class="col">
-        3
+        layout test
       </li>
       <li class="col">
-        4
-      </li>
-      <li class="col">
-        5
-      </li>
-      <li class="col">
-        6
-      </li>
-      <li class="col">
-        7
-      </li>
+        layout test
+      </li>-->
     </ul>
   </section>
   <section id="about-wrapper" class="content">
-    <h2>About</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla cursus metus non placerat. Nullam ac tempus lacus, eget bibendum ligula. Donec hendrerit orci justo, in scelerisque sapien molestie a. Praesent eget vehicula neque. Vestibulum posuere molestie purus, quis pretium nibh gravida eget. Phasellus in enim sit amet ligula varius feugiat vel at libero. Suspendisse at mi volutpat, venenatis massa a, aliquam lacus. Donec sit amet malesuada ipsum.
+    <h2><?php echo $mainmenutext["about"]; ?></h2>
+    <p>About and CV sections still being written. Check projects above meanwhile.</p>
 
-Nullam suscipit nunc sapien, eget pharetra enim rhoncus vitae. Aenean vitae condimentum magna. Vestibulum eu fermentum nisi. Nam vitae vestibulum quam. Proin at leo ac odio varius consectetur non a leo. Nullam auctor mi eget arcu pharetra pulvinar. In hac habitasse platea dictumst. Quisque commodo accumsan justo et dictum. Nullam volutpat lorem ut tortor bibendum condimentum. Nulla non tortor lobortis, ullamcorper nisl ac, tempor ligula. Maecenas ut facilisis arcu. Nullam vehicula lorem vel commodo vulputate.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla cursus metus non placerat. Nullam ac tempus lacus, eget bibendum ligula. Donec hendrerit orci justo, in scelerisque sapien molestie a. Praesent eget vehicula neque. Vestibulum posuere molestie purus, quis pretium nibh gravida eget. Phasellus in enim sit amet ligula varius feugiat vel at libero. Suspendisse at mi volutpat, venenatis massa a, aliquam lacus. Donec sit amet malesuada ipsum.
-
-Nullam suscipit nunc sapien, eget pharetra enim rhoncus vitae. Aenean vitae condimentum magna. Vestibulum eu fermentum nisi. Nam vitae vestibulum quam. Proin at leo ac odio varius consectetur non a leo. Nullam auctor mi eget arcu pharetra pulvinar. In hac habitasse platea dictumst. Quisque commodo accumsan justo et dictum. Nullam volutpat lorem ut tortor bibendum condimentum. Nulla non tortor lobortis, ullamcorper nisl ac, tempor ligula. Maecenas ut facilisis arcu. Nullam vehicula lorem vel commodo vulputate.
-
-
-    </p>
   </section>
   <section id="cv-wrapper" class="content">
-    <h2>CV</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla cursus metus non placerat. Nullam ac tempus lacus, eget bibendum ligula. Donec hendrerit orci justo, in scelerisque sapien molestie a. Praesent eget vehicula neque. Vestibulum posuere molestie purus, quis pretium nibh gravida eget. Phasellus in enim sit amet ligula varius feugiat vel at libero. Suspendisse at mi volutpat, venenatis massa a, aliquam lacus. Donec sit amet malesuada ipsum.
+    <h2><?php echo $mainmenutext["cv"]; ?></h2>
+    <h3>Education</h3>
+    <p>2016-2017<br>
+    Javascriptutvecklare front-end<br>
+    Lernia Yrkeshögskola
+  </p>
 
-Nullam suscipit nunc sapien, eget pharetra enim rhoncus vitae. Aenean vitae condimentum magna. Vestibulum eu fermentum nisi. Nam vitae vestibulum quam. Proin at leo ac odio varius consectetur non a leo. Nullam auctor mi eget arcu pharetra pulvinar. In hac habitasse platea dictumst. Quisque commodo accumsan justo et dictum. Nullam volutpat lorem ut tortor bibendum condimentum. Nulla non tortor lobortis, ullamcorper nisl ac, tempor ligula. Maecenas ut facilisis arcu. Nullam vehicula lorem vel commodo vulputate.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla cursus metus non placerat. Nullam ac tempus lacus, eget bibendum ligula. Donec hendrerit orci justo, in scelerisque sapien molestie a. Praesent eget vehicula neque. Vestibulum posuere molestie purus, quis pretium nibh gravida eget. Phasellus in enim sit amet ligula varius feugiat vel at libero. Suspendisse at mi volutpat, venenatis massa a, aliquam lacus. Donec sit amet malesuada ipsum.
+  <p>2012-2014<br>
+  Handelshögskolans ekonomprogram<br>
+  Göteborgs Universitet
+</p>
 
-Nullam suscipit nunc sapien, eget pharetra enim rhoncus vitae. Aenean vitae condimentum magna. Vestibulum eu fermentum nisi. Nam vitae vestibulum quam. Proin at leo ac odio varius consectetur non a leo. Nullam auctor mi eget arcu pharetra pulvinar. In hac habitasse platea dictumst. Quisque commodo accumsan justo et dictum. Nullam volutpat lorem ut tortor bibendum condimentum. Nulla non tortor lobortis, ullamcorper nisl ac, tempor ligula. Maecenas ut facilisis arcu. Nullam vehicula lorem vel commodo vulputate.
+<p>2012-2014<br>
+Handelshögskolans ekonomprogram
+</p>
 
-
-    </p>
+  <h3>Arbetslivserfarenhet</h3>
+  <p>2014-<br>
+    IT och Administration<br>
+    Hisinge Buss AB / Rekå Resor AB, Göteborg</p>
+    <p>Still being written, please contact me below or check <a href="https://www.linkedin.com/in/arnoldson">LinkedIn</a> for more.
   </section>
   <section id="contact-wrapper" class="content">
     <h2>Contact form</h2>

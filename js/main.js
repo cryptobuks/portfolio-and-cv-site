@@ -1,3 +1,6 @@
+
+!function (window,document,undefined) {
+
 var language = document.getElementsByTagName('html').lang;
 
 if (language === "sv") {
@@ -6,7 +9,7 @@ if (language === "sv") {
 
 
 window.onload = function() {
-  window.addEventListener("scroll", navSlide);
+  // window.addEventListener("scroll", navSlide);
 
 
   setTimeout(function() {
@@ -20,3 +23,5 @@ function navSlide() {
   var c = (a / b);
   document.getElementById('main-fake-nav').style.transform = "translateX(" + ((c*100)-6) + "vw)";
 }
+
+} (this,document)

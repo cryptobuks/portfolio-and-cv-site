@@ -50,4 +50,4 @@ function generateRandomString($length = 10) {
       <div id="form-messages"></div>
     </fieldset>
   </form>
-</div
+</div>

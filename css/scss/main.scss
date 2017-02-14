@@ -10,20 +10,20 @@ $default-focus-outline: red;
 $font-stack: 'Dosis', sans-serif;
 $curive-font: 'Cookie', cursive;
 $content-max-width: 900px;
-$background-colour-bars: rgba(31,18,9,1);
-$background-colour-cover: rgba(0,51,102,0.8);
-$main-background-color: rgba(245,245,220,0.5);
+$background-colour-bars: rgba(40,40,40,1);
+$background-colour-cover: rgba(0,0,0,0.86);
+$main-background-color: rgba(255,255,255,0);
 
 /* Nav */
 $main-nav-text-colour: white;
-$background-main-nav: rgba(31,18,9,1);
+$background-main-nav: rgba(40,40,40,1);
 $main-nav-hover-background: rgba(0,0,0,0.5);
-$main-nav-background-colour-dropdown: rgba(53,30,14,1);
+$main-nav-background-colour-dropdown: rgba(65,65,65,1);
 $main-nav-sub-text-colour: white;
 $main-nav-text-transform: uppercase;
 
 /* Header */
-$header-h1-color: rgba(255,255,255,1);
+$header-h1-color: rgba(255,0,68,1);
 $header-h2-color: rgba(255,255,255,1);
 $header-h3-color: rgba(255,255,255,1);
 $header-h4-color: rgba(255,255,255,1);
@@ -137,7 +137,7 @@ UNIQUE ELEMENTS
   list-style: none;
   width: 80vw;
   li {
-
+    border-radius: 5px;
     float: left;
     display:flex;
     justify-content: center;
@@ -145,11 +145,39 @@ UNIQUE ELEMENTS
     width: (((80vw/3)-4vw));
     height: (((80vw/3)-4vw));
     margin: 1vw;
-    background-color: green;
+    background-color: silver;
     color: #bdc3c7;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
     &:nth-child(3n+1) {
     clear: left;
+    overflow: hidden;
+
     }
+
+    a,
+    a.link,
+    a.visited,
+    a.active {
+      font-size: 1.6em;
+      font-weight: bold;
+      color: black;
+    }
+
+    a.hover {
+      font-size: 1.6em;
+      font-weight: bold;
+      color: darkgrey;
+    }
+
+    img {
+      width: 250%;
+      height: 250%;
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+
   }
 }
 
@@ -242,9 +270,9 @@ li.dropdown {
   display: block;
   float: left;
   position: absolute;
-  background-image: url('../img/computer-1245714.jpg');
-  background-size:cover;
-  filter: grayscale(100%) blur(2px) brightness(0.7);
+  //background-image: url('../img/computer-1245714github.jpg');
+  //background-size:cover;
+  //filter: grayscale(100%) blur(2px) brightness(0.7);
   width:100%;
   height:100%;
   z-index: -2;
@@ -282,6 +310,32 @@ li.dropdown {
     font-size: $header-h4-font-size;
     padding: $header-h4-padding 0;
   }
+}
+
+.contact-form-container {
+  fieldset {
+    border: 0;
+  }
+
+  input {
+    width: 300px;
+    margin: 2px;
+  }
+
+  textarea {
+    width: 298px;
+    height: 100px;
+    margin: 2px;
+  }
+
+  button {
+    width: 300px;
+    background-color: $background-main-nav;
+    color: white;
+    border: 0;
+    margin: 2px;
+  }
+
 }
 
 
