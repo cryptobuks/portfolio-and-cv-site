@@ -12,7 +12,6 @@ function sendContactForm(event) {
   event.preventDefault();
   document.getElementById("contact-submit").disabled = true;
 
-
   var formData = $("#contact-form").serialize();
   var formMessages = $("#form-messages");
 
@@ -23,6 +22,7 @@ function sendContactForm(event) {
     data: formData,
     statusCode: {
       404:function(){
+        grecaptcha.reset();
         if (document.getElementsByTagName('html')[0].getAttribute('lang') === "sv") {
           $(formMessages).text('Oops! Det är något fel på servern och dit meddelande kunde inte skickas.');
         } else {
@@ -61,6 +61,7 @@ function sendContactForm(event) {
         el1.value = "";
         el2.value = "";
         el3.value = "";
+        grecaptcha.reset();
       }, 9000);
     })
     .fail(function(data) {
@@ -71,6 +72,7 @@ function sendContactForm(event) {
       //exit prevent double click
       setTimeout(function(){
         document.getElementById("contact-submit").disabled = false;
+        grecaptcha.reset();
       }, 2000);
 
       // Set the message text.

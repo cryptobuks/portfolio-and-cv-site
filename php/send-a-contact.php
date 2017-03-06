@@ -114,9 +114,13 @@
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the form fields and remove whitespace.
-    $name = trim($_POST['name']);
+    $name = filter_var(trim($_POST['name']), FILTER_SANITIZE_STRING);
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-    $message = trim($_POST['message']);
+    $message = filter_var(trim($_POST['message']), FILTER_SANITIZE_STRING);
+
+    $name = strip_tags($name);
+    $email = strip_tags($email);
+    $message = strip_tags($message);
 
     if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
       // Set a 400 (bad request) response code and exit.
@@ -139,8 +143,8 @@
       exit;
     };
 
-    $recipient = "form1@arnoldson.net";
-    $subject = "Arnoldson.online from" . $name;
+    $recipient = "form2@arnoldson.net";
+    $subject = "Arnoldson.online from " . $name;
     echo $email_content;
     $email_content = "Name: " . $name . "\r\n";
     $email_content .= "Email: " . $email . "\r\n\r\n";
@@ -172,6 +176,8 @@
     $email_headers = "From: Arnoldson.online <formmailer@arnoldson.online>\r\n";
     $email_headers .= "Reply-To: " . $name . "<" . $email . ">\r\n";
     $email_headers .= "Content-Type: text; charset=utf-8\r\n";
+    $email_headers .= "Return-Path: <form2@arnoldson.net>\r\n";
+    $email_headers .= "Errors-To: <form2@arnoldson.net>\r\n";
 
     if (mail($recipient, $subject, $email_content, $email_headers)) {
 
